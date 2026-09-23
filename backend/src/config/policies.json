@@ -1,0 +1,77 @@
+{
+  "agents": {
+    "java-agent": {
+      "id": "java-agent",
+      "name": "Java Developer Agent",
+      "role": "Java Development & Code Analysis",
+      "icon": "Coffee",
+      "color": "amber",
+      "allowed": [
+        "CREATE_JAVA_FILE",
+        "READ_JAVA_FILE",
+        "COMPILE_JAVA",
+        "RUN_JAVA"
+      ],
+      "sensitive": [
+        "ACCESS_ENV",
+        "HTTP_REQUEST"
+      ],
+      "forbidden": [
+        "DELETE_DATABASE",
+        "ACCESS_PASSWORDS",
+        "SEND_PAYMENT",
+        "MODIFY_OTHER_AGENT"
+      ]
+    },
+    "ml-agent": {
+      "id": "ml-agent",
+      "name": "ML / Data Agent",
+      "role": "Dataset Analytics & Model Training",
+      "icon": "Brain",
+      "color": "purple",
+      "allowed": [
+        "READ_DATASET",
+        "RUN_PYTHON",
+        "TRAIN_MODEL",
+        "SAVE_MODEL",
+        "GENERATE_ANALYSIS"
+      ],
+      "sensitive": [
+        "EXPORT_DATA",
+        "ACCESS_NEW_DATASET"
+      ],
+      "forbidden": [
+        "DELETE_USER",
+        "ACCESS_CREDENTIALS",
+        "MODIFY_JAVA_PROJECT"
+      ]
+    },
+    "web-agent": {
+      "id": "web-agent",
+      "name": "Web / API Agent",
+      "role": "Information Retrieval & API Integration",
+      "icon": "Globe",
+      "color": "cyan",
+      "allowed": [
+        "HTTP_GET",
+        "READ_API",
+        "SEARCH",
+        "GENERATE_API_RESPONSE"
+      ],
+      "sensitive": [
+        "POST_API",
+        "SCRAPE_BULK"
+      ],
+      "forbidden": [
+        "HTTP_DELETE",
+        "DATABASE_DROP",
+        "ACCESS_SECRETS"
+      ]
+    }
+  },
+  "riskThresholds": {
+    "allowMax": 30,
+    "challengeMax": 65,
+    "criticalMin": 66
+  }
+}
